@@ -6,10 +6,6 @@ vim.g.maplocalleader = " "
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
--- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`

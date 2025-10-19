@@ -75,7 +75,44 @@ require("lze").load({
 	{
 		"ts_ls",
 		for_cat = "webdev",
-		lsp = {},
+		lsp = {
+			settings = {
+				typescript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+					suggest = {
+						completeFunctionCalls = true,
+					},
+					preferences = {
+						importModuleSpecifier = "non-relative",
+					},
+				},
+				javascript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+			},
+			init_options = {
+				preferences = {
+					importModuleSpecifierPreference = "non-relative",
+					importModuleSpecifierEnding = "minimal",
+				},
+			},
+		},
 	},
 	{
 		"cssls",
