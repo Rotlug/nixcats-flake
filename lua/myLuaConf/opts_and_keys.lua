@@ -16,6 +16,9 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Enable Inlay Hints
+vim.lsp.inlay_hint.enable(true)
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
