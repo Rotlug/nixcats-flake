@@ -121,6 +121,17 @@ require("lze").load({
 		event = "DeferredUIEnter",
 		after = function(plugin)
 			require("Comment").setup()
+			-- Alt+/ to toggle comment
+			-- For normal mode
+			vim.keymap.set("n", "<A-/>", function()
+				require("Comment.api").toggle.linewise.current()
+			end, { desc = "Toggle comment", silent = true })
+			-- For visual mode (comment selection)
+			vim.keymap.set("x", "<A-/>", function()
+				local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+				vim.api.nvim_feedkeys(esc, "nx", false)
+				require("Comment.api").toggle.linewise(vim.fn.visualmode())
+			end, { desc = "Toggle comment (visual)", silent = true })
 		end,
 	},
 	{
