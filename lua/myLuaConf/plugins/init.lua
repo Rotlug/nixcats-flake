@@ -108,6 +108,14 @@ require("lze").load({
 		end,
 	},
 	{
+		"todo-comments.nvim",
+		for_cat = "general.extra",
+		event = "DeferredUIEnter",
+		after = function(plugin)
+			require("todo-comments").setup()
+		end,
+	},
+	{
 		"comment.nvim",
 		for_cat = "general.extra",
 		event = "DeferredUIEnter",
