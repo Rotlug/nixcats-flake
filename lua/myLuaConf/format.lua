@@ -24,6 +24,7 @@ require("lze").load({
 					lua = { "stylua" },
 					nix = { "alejandra" },
 					python = { "ruff_format", "ruff_fix" },
+					rust = { "rustfmt" },
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
 					javascriptreact = { "prettierd" },
