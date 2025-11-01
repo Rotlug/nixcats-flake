@@ -28,6 +28,7 @@ require("lze").load({
 					typescript = { "prettierd" },
 					javascriptreact = { "prettierd" },
 					typescriptreact = { "prettierd" },
+					go = { "goimports-reviser", "gofmt", "golines" },
 				},
 			})
 

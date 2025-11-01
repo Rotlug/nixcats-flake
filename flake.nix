@@ -138,6 +138,12 @@
           stylua
         ];
 
+        go = with pkgs; [
+          goimports-reviser
+          golines
+          gopls
+        ];
+
         webdev = with pkgs; [
           vscode-css-languageserver
           vscode-json-languageserver
@@ -145,6 +151,11 @@
           tailwindcss-language-server
           vscode-langservers-extracted
           prettierd
+        ];
+
+        rust = with pkgs; [
+          rustfmt
+          rust-analyzer
         ];
       };
 
@@ -180,6 +191,14 @@
             "tokyonight" = tokyonight-nvim;
             "tokyonight-day" = tokyonight-nvim;
             "kanagawa" = kanagawa-nvim;
+
+            "duskfox" = nightfox-nvim;
+            "nightfox" = nightfox-nvim;
+            "dawnfox" = nightfox-nvim;
+            "carbonfox" = nightfox-nvim;
+            "dayfox" = nightfox-nvim;
+
+            "everforest" = everforest;
           }
         );
         # This is obviously a fairly basic usecase for this, but still nice.
@@ -388,6 +407,8 @@
           python = true;
           webdev = true;
           lua = true;
+          go = true;
+          rust = true;
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
@@ -398,7 +419,7 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "kanagawa";
+          colorscheme = "everforest";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass

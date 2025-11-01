@@ -68,6 +68,16 @@ require("lze").load({
 		-- also these are regular specs and you can use before and after and all the other normal fields
 	},
 	{
+		"rust_analyzer",
+		for_cat = "rust",
+		lsp = {},
+	},
+	{
+		"gopls",
+		for_cat = "go",
+		lsp = {},
+	},
+	{
 		"pyright",
 		for_cat = "python",
 		lsp = {},
@@ -78,15 +88,6 @@ require("lze").load({
 		lsp = {
 			settings = {
 				typescript = {
-					inlayHints = {
-						includeInlayParameterNameHints = "all",
-						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayEnumMemberValueHints = true,
-					},
 					suggest = {
 						completeFunctionCalls = true,
 					},
@@ -94,17 +95,7 @@ require("lze").load({
 						importModuleSpecifier = "non-relative",
 					},
 				},
-				javascript = {
-					inlayHints = {
-						includeInlayParameterNameHints = "all",
-						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayEnumMemberValueHints = true,
-					},
-				},
+				javascript = {},
 			},
 			init_options = {
 				preferences = {

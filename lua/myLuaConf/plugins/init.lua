@@ -5,6 +5,20 @@ end
 -- Could I lazy load on colorscheme with lze?
 -- sure. But I was going to call vim.cmd.colorscheme() during startup anyway
 -- this is just an example, feel free to do a better job!
+
+-- Colorscheme config
+if colorschemeName:match("fox$") then
+	require("nightfox").setup({
+		options = {
+			styles = {
+				comments = "italic",
+				types = "italic,bold",
+			},
+		},
+	})
+elseif colorschemeName == "everforest" then
+	vim.g.everforest_background = "hard"
+end
 vim.cmd.colorscheme(colorschemeName)
 
 local ok, notify = pcall(require, "notify")
@@ -351,11 +365,11 @@ require("lze").load({
 		for_cat = "general.ide",
 		event = "BufEnter",
 		after = function(plugin)
-			require("nvim-tree").setup({
-				disabl,
-			})
+			require("nvim-tree").setup({})
 
 			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle NvimTree" })
+
+			vim.opt.fillchars = vim.opt.fillchars + { vert = " " }
 		end,
 	},
 })
