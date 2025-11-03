@@ -35,7 +35,7 @@ if ok then
 end
 
 -- NOTE: you can check if you included the category with the thing wherever you want.
-if nixCats("general.extra") and not "general.ide" then
+if nixCats("general.extra") and not nixCats("general.ide") then
 	-- I didnt want to bother with lazy loading this.
 	-- I could put it in opt and put it in a spec anyway
 	-- and then not set any handlers and it would load at startup,
@@ -74,6 +74,10 @@ if nixCats("general.extra") and not "general.ide" then
 	})
 	vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true, desc = "Open Parent Directory" })
 	vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = "Open nvim root directory" })
+end
+
+if nixCats("transparnet") then
+	require("transparent").setup({})
 end
 
 require("lze").load({

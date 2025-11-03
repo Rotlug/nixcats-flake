@@ -179,6 +179,9 @@
             nvim-web-devicons
           ];
         };
+        transparent = with pkgs.vimPlugins; [
+          transparent-nvim
+        ];
         # You can retreive information from the
         # packageDefinitions of the package this was packaged with.
         # :help nixCats.flake.outputs.categoryDefinitions.scheme
@@ -401,6 +404,8 @@
           general = true;
           lint = true;
           format = true;
+
+          transparent = true;
 
           # Languages
           nix = true;
