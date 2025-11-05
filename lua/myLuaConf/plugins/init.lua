@@ -166,7 +166,11 @@ require("lze").load({
 		for_cat = "general.always",
 		event = "DeferredUIEnter",
 		after = function(plugin)
-			require("mini.pairs").setup()
+			require("mini.pairs").setup({
+				mappings = {
+					["'"] = false,
+				},
+			})
 		end,
 	},
 	{
