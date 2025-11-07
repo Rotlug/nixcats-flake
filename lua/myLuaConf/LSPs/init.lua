@@ -68,11 +68,6 @@ require("lze").load({
 		-- also these are regular specs and you can use before and after and all the other normal fields
 	},
 	{
-		"rust_analyzer",
-		for_cat = "rust",
-		lsp = {},
-	},
-	{
 		"gopls",
 		for_cat = "go",
 		lsp = {},
@@ -170,5 +165,10 @@ require("lze").load({
 				},
 			},
 		},
+	},
+	{
+		"rustaceanvim",
+		for_cat = "rust",
+		version = "^6",
 	},
 })

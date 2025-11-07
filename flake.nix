@@ -156,6 +156,7 @@
         rust = with pkgs; [
           rustfmt
           rust-analyzer
+          clippy
         ];
       };
 
@@ -287,6 +288,9 @@
         };
         webdev = with pkgs.vimPlugins; [
           nvim-ts-autotag
+        ];
+        rust = with pkgs.vimPlugins; [
+          rustaceanvim
         ];
       };
 
