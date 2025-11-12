@@ -134,6 +134,22 @@ require("lze").load({
 		end,
 	},
 	{
+		"nvim-ufo",
+		for_cat = "general.always",
+		event = "DeferredUIEnter",
+		after = function(plugin)
+			require("ufo").setup({})
+
+			vim.o.foldcolumn = "1" -- '0' is not bad
+			vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+			vim.o.foldlevelstart = 99
+			vim.o.foldenable = true
+
+			-- Toggle fold under cursor with Shift+Enter
+			vim.keymap.set("n", "<S-CR>", "za", { desc = "Toggle fold under cursor (Shift+Enter)" })
+		end,
+	},
+	{
 		"comment.nvim",
 		for_cat = "general.extra",
 		event = "DeferredUIEnter",

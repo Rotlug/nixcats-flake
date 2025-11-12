@@ -268,6 +268,7 @@
             vim-rhubarb
             nvim-surround
             mini-pairs
+            nvim-ufo
           ];
           extra = with pkgs.vimPlugins; [
             fidget-nvim
