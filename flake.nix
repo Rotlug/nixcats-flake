@@ -410,7 +410,7 @@
           lint = true;
           format = true;
 
-          transparent = true;
+          transparent = false;
 
           # Languages
           nix = true;
@@ -429,7 +429,7 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "everforest";
+          colorscheme = "catppuccin-mocha";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
