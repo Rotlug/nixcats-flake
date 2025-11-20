@@ -78,6 +78,11 @@ require("lze").load({
 		lsp = {},
 	},
 	{
+		"ruff",
+		for_cat = "python",
+		lsp = {},
+	},
+	{
 		"ts_ls",
 		for_cat = "webdev",
 		lsp = {
@@ -165,6 +170,11 @@ require("lze").load({
 				},
 			},
 		},
+	},
+	{
+		"qmlls",
+		for_cat = "qml",
+		lsp = {},
 	},
 	{
 		"rustaceanvim",

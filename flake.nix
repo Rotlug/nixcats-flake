@@ -158,6 +158,10 @@
           rust-analyzer
           clippy
         ];
+
+        qml = with pkgs; [
+          kdePackages.qtdeclarative # includes qmlls
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -187,7 +191,7 @@
         # packageDefinitions of the package this was packaged with.
         # :help nixCats.flake.outputs.categoryDefinitions.scheme
         themer = with pkgs.vimPlugins; (
-          builtins.getAttr (categories.colorscheme or "onedark") {
+          builtins.getAttr (categories.colorscheme or "catppuccin-mocha") {
             # Theme switcher without creating a new category
             "onedark" = onedark-nvim;
             "catppuccin" = catppuccin-nvim;
@@ -419,6 +423,7 @@
           lua = true;
           go = true;
           rust = true;
+          qml = true;
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.

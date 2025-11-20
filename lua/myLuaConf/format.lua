@@ -30,6 +30,7 @@ require("lze").load({
 					javascriptreact = { "prettierd" },
 					typescriptreact = { "prettierd" },
 					go = { "goimports-reviser", "gofmt", "golines" },
+					qml = { "qmlformat" },
 				},
 			})
 
