@@ -166,3 +166,11 @@ vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
 
 -- Save File
 vim.keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+
+-- Scroll half-page up/down with Ctrl + Up/Down
+vim.keymap.set("n", "<C-Up>", "<C-u>", opts)
+vim.keymap.set("n", "<C-Down>", "<C-d>", opts)
+vim.keymap.set("i", "<C-Up>", "<Esc><C-u>i", opts)
+vim.keymap.set("i", "<C-Down>", "<Esc><C-d>i", opts)
+vim.keymap.set("v", "<C-Up>", "<C-u>", opts)
+vim.keymap.set("v", "<C-Down>", "<C-d>", opts)
