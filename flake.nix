@@ -191,7 +191,7 @@
         # packageDefinitions of the package this was packaged with.
         # :help nixCats.flake.outputs.categoryDefinitions.scheme
         themer = with pkgs.vimPlugins; (
-          builtins.getAttr (categories.colorscheme or "catppuccin-mocha") {
+          builtins.getAttr (categories.colorscheme or "kanagawa") {
             # Theme switcher without creating a new category
             "onedark" = onedark-nvim;
             "catppuccin" = catppuccin-nvim;
@@ -434,7 +434,7 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "catppuccin-mocha";
+          colorscheme = "kanagawa";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
