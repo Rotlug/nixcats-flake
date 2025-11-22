@@ -207,6 +207,7 @@
             "dayfox" = nightfox-nvim;
 
             "everforest" = everforest;
+            "arctic" = pkgs.callPackage ./pkgs/arctic {};
           }
         );
         # This is obviously a fairly basic usecase for this, but still nice.
@@ -434,7 +435,7 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "kanagawa";
+          colorscheme = "arctic";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
