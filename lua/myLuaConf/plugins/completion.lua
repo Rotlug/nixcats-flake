@@ -85,6 +85,7 @@ return {
 				},
 				completion = {
 					menu = {
+						border = "single",
 						draw = {
 							treesitter = { "lsp" },
 							components = {
@@ -100,6 +101,9 @@ return {
 						},
 					},
 					documentation = {
+						window = {
+							border = "single",
+						},
 						auto_show = true,
 					},
 				},
