@@ -19,6 +19,7 @@ if colorschemeName:match("fox$") then
 elseif colorschemeName == "everforest" then
 	vim.g.everforest_background = "hard"
 end
+
 vim.cmd.colorscheme(colorschemeName)
 
 local ok, notify = pcall(require, "notify")
@@ -234,7 +235,7 @@ require("lze").load({
 			require("lualine").setup({
 				options = {
 					icons_enabled = false,
-					theme = colorschemeName,
+					-- theme = colorschemeName,
 					component_separators = "|",
 					section_separators = "",
 				},
