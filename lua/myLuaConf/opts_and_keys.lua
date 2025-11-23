@@ -31,6 +31,9 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = "a"
 
+-- Enable window borders
+vim.o.winborder = "single"
+
 -- Indent
 -- vim.o.smarttab = true
 vim.opt.cpoptions:append("I")
@@ -117,12 +120,6 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous dia
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
-vim.diagnostic.config({
-	float = {
-		border = "single",
-	},
-})
 
 -- kickstart.nvim starts you with this.
 -- But it constantly clobbers your system clipboard whenever you delete anything.
