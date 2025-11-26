@@ -208,6 +208,7 @@
 
             "everforest" = everforest;
             "arctic" = pkgs.callPackage ./pkgs/arctic {};
+            "dark" = pkgs.callPackage ./pkgs/dark {};
           }
         );
         # This is obviously a fairly basic usecase for this, but still nice.
@@ -435,7 +436,7 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "arctic";
+          colorscheme = "dark";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass

@@ -394,7 +394,7 @@ require("lze").load({
 
 			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle NvimTree" })
 
-			vim.opt.fillchars = vim.opt.fillchars + { vert = " " }
+			-- vim.opt.fillchars = vim.opt.fillchars + { vert = " " }
 		end,
 	},
 })
