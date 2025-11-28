@@ -145,9 +145,8 @@
         ];
 
         webdev = with pkgs; [
-          vscode-css-languageserver
-          vscode-json-languageserver
           typescript-language-server
+          emmet-language-server
           tailwindcss-language-server
           vscode-langservers-extracted
           prettierd

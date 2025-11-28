@@ -111,6 +111,16 @@ require("lze").load({
 		lsp = {},
 	},
 	{
+		"emmet_language_server",
+		for_cat = "webdev",
+		lsp = {},
+	},
+	{
+		"html",
+		for_cat = "webdev",
+		lsp = {},
+	},
+	{
 		"jsonls",
 		for_cat = "webdev",
 		lsp = {},
