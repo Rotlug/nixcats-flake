@@ -187,6 +187,11 @@ require("lze").load({
 		lsp = {},
 	},
 	{
+		"gdscript",
+		for_cat = "godot",
+		lsp = {},
+	},
+	{
 		"rustaceanvim",
 		for_cat = "rust",
 		version = "^6",

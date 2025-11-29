@@ -425,6 +425,7 @@
           go = true;
           rust = true;
           qml = true;
+          godot = true;
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
