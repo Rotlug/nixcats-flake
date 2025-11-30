@@ -168,3 +168,26 @@ vim.keymap.set("i", "<C-Up>", "<Esc><C-u>i", opts)
 vim.keymap.set("i", "<C-Down>", "<Esc><C-d>i", opts)
 vim.keymap.set("v", "<C-Up>", "<C-u>", opts)
 vim.keymap.set("v", "<C-Down>", "<C-d>", opts)
+
+-- Find & Replace all in file with Alt+F
+vim.keymap.set("x", "<M-f>", function()
+	-- Yank visual selection into register v
+	vim.cmd('normal! "vy')
+
+	-- Get the selection, strip newlines, escape / and \
+	local sel = vim.fn.getreg("v"):gsub("\n", ""):gsub("\r", "")
+	sel = vim.fn.escape(sel, "/\\")
+
+	-- Build the command :%s/<sel>//g
+	local base = ":%s/" .. sel .. "//g"
+
+	-- Expand <Left> and repeat it twice
+	local left = vim.api.nvim_replace_termcodes("<Left>", true, false, true)
+	local move = left .. left
+
+	-- Expand the base and append two real left keycodes
+	local final = vim.api.nvim_replace_termcodes(base, true, false, true) .. move
+
+	-- Feed keys so command-line shows with cursor between the slashes
+	vim.api.nvim_feedkeys(final, "n", false)
+end, { noremap = true, desc = "Global substitute of selected text (Alt-f)" })
