@@ -410,21 +410,4 @@ require("lze").load({
 			-- vim.opt.fillchars = vim.opt.fillchars + { vert = " " }
 		end,
 	},
-	{
-		"auto-dark-mode.nvim",
-		for_cat = "dynamic_theme",
-		event = "VimEnter",
-		after = function(plugin)
-			require("auto-dark-mode").setup({
-				set_dark_mode = function()
-					vim.api.nvim_set_option("background", "dark")
-					vim.cmd.colorscheme("nightfox")
-				end,
-				set_light_mode = function()
-					vim.api.nvim_set_option("background", "dark")
-					vim.cmd.colorscheme("dayfox")
-				end,
-			})
-		end,
-	},
 })
