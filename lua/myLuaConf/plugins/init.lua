@@ -24,13 +24,29 @@ if not nixCats("dynamic_theme") then
 	vim.cmd.colorscheme(colorschemeName)
 else
 	-- Listen for theme changes
+	local function get_hl(name)
+		local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = name, link = false })
+		if not ok then
+			print("Highlight group not found: " .. name)
+			return
+		end
+		for k, v in pairs(hl) do
+			print(name .. "." .. k .. " = " .. tostring(v))
+		end
+		return hl
+	end
+
 	vim.api.nvim_create_autocmd("OptionSet", {
 		pattern = "background",
 		callback = function()
 			if vim.o.background == "dark" then
 				vim.cmd.colorscheme(nixCats("theme_dark"))
+				local fg = get_hl("LspInlayHint").fg
+				vim.api.nvim_set_hl(0, "LspInlayHint", { bg = "NONE", fg = fg })
 			else
 				vim.cmd.colorscheme(nixCats("theme_light"))
+				local fg = get_hl("LspInlayHint").fg
+				vim.api.nvim_set_hl(0, "LspInlayHint", { bg = "NONE", fg = fg })
 			end
 		end,
 	})
