@@ -191,3 +191,6 @@ vim.keymap.set("x", "<M-f>", function()
 	-- Feed keys so command-line shows with cursor between the slashes
 	vim.api.nvim_feedkeys(final, "n", false)
 end, { noremap = true, desc = "Global substitute of selected text (Alt-f)" })
+
+-- No hidden buffers
+vim.opt.hidden = false
