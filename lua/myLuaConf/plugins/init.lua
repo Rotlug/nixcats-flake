@@ -1,4 +1,4 @@
-local colorschemeName = nixCats("colorscheme")
+local colorschemeName = nixCats("theme_dark")
 if not require("nixCatsUtils").isNixCats then
 	colorschemeName = "onedark"
 end
@@ -20,7 +20,20 @@ elseif colorschemeName == "everforest" then
 	vim.g.everforest_background = "hard"
 end
 
-vim.cmd.colorscheme(colorschemeName)
+if not nixCats("dynamic_theme") then
+	vim.cmd.colorscheme(colorschemeName)
+else
+	vim.api.nvim_create_autocmd("OptionSet", {
+		pattern = "background",
+		callback = function()
+			if vim.o.background == "dark" then
+				vim.cmd.colorscheme(nixCats("theme_dark"))
+			else
+				vim.cmd.colorscheme(nixCats("theme_light"))
+			end
+		end,
+	})
+end
 
 local ok, notify = pcall(require, "notify")
 if ok then
@@ -395,6 +408,23 @@ require("lze").load({
 			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle NvimTree" })
 
 			-- vim.opt.fillchars = vim.opt.fillchars + { vert = " " }
+		end,
+	},
+	{
+		"auto-dark-mode.nvim",
+		for_cat = "dynamic_theme",
+		event = "VimEnter",
+		after = function(plugin)
+			require("auto-dark-mode").setup({
+				set_dark_mode = function()
+					vim.api.nvim_set_option("background", "dark")
+					vim.cmd.colorscheme("nightfox")
+				end,
+				set_light_mode = function()
+					vim.api.nvim_set_option("background", "dark")
+					vim.cmd.colorscheme("dayfox")
+				end,
+			})
 		end,
 	},
 })

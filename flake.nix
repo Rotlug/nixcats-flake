@@ -190,7 +190,7 @@
         # packageDefinitions of the package this was packaged with.
         # :help nixCats.flake.outputs.categoryDefinitions.scheme
         themer = with pkgs.vimPlugins; (
-          builtins.getAttr (categories.colorscheme or "kanagawa") {
+          builtins.getAttr (categories.colorscheme or "nightfox") {
             # Theme switcher without creating a new category
             "onedark" = onedark-nvim;
             "catppuccin" = catppuccin-nvim;
@@ -416,6 +416,7 @@
           format = true;
 
           transparent = false;
+          dynamic_theme = true;
 
           # Languages
           nix = true;
@@ -436,7 +437,11 @@
           # you could also pass something else:
           # see :help nixCats
           themer = true;
-          colorscheme = "dark";
+
+          # If the dyanmic_theme category is disabled,
+          # This config will use the dark theme
+          theme_light = "dayfox";
+          theme_dark = "nightfox";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
