@@ -20,10 +20,18 @@ require("lze").load({
 					timeout_ms = 500,
 					lsp_format = "fallback",
 				},
+				formatters = {
+					gdscript_formatter = {
+						command = "gdscript-formatter",
+						args = { "$FILENAME" },
+						stdin = false,
+					},
+				},
 				formatters_by_ft = {
 					lua = { "stylua" },
 					nix = { "alejandra" },
 					python = { "ruff_format", "ruff_fix" },
+					gdscript = { "gdscript_formatter" },
 					rust = { "rustfmt" },
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },

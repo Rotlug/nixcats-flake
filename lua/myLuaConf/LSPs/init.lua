@@ -192,8 +192,26 @@ require("lze").load({
 		lsp = {},
 	},
 	{
-		"rustaceanvim",
+		"rust_analyzer",
 		for_cat = "rust",
-		version = "^6",
+		lsp = {
+			on_attach = require("myLuaConf.LSPs.on_attach"), -- make sure this runs
+			settings = {
+				["rust-analyzer"] = {
+					-- Enable clippy on save for diagnostics
+					checkOnSave = {
+						command = "clippy",
+						allFeatures = true,
+					},
+					-- Enable other useful options
+					cargo = {
+						allFeatures = true,
+					},
+					procMacro = {
+						enable = true,
+					},
+				},
+			},
+		},
 	},
 })

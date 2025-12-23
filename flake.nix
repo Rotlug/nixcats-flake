@@ -161,6 +161,10 @@
         qml = with pkgs; [
           kdePackages.qtdeclarative # includes qmlls
         ];
+
+        godot = with pkgs; [
+          gdscript-formatter
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -295,9 +299,6 @@
         webdev = with pkgs.vimPlugins; [
           nvim-ts-autotag
         ];
-        rust = with pkgs.vimPlugins; [
-          rustaceanvim
-        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH
@@ -427,6 +428,8 @@
           rust = true;
           qml = true;
           godot = true;
+
+          debug = true;
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
