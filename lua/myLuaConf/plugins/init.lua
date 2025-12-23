@@ -2,9 +2,6 @@ local colorschemeName = nixCats("theme_dark")
 if not require("nixCatsUtils").isNixCats then
 	colorschemeName = "onedark"
 end
--- Could I lazy load on colorscheme with lze?
--- sure. But I was going to call vim.cmd.colorscheme() during startup anyway
--- this is just an example, feel free to do a better job!
 
 -- Colorscheme config
 if colorschemeName:match("fox$") then
@@ -27,11 +24,7 @@ else
 	local function get_hl(name)
 		local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = name, link = false })
 		if not ok then
-			print("Highlight group not found: " .. name)
 			return
-		end
-		for k, v in pairs(hl) do
-			print(name .. "." .. k .. " = " .. tostring(v))
 		end
 		return hl
 	end
