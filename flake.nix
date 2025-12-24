@@ -190,30 +190,29 @@
         transparent = with pkgs.vimPlugins; [
           transparent-nvim
         ];
+
         # You can retreive information from the
         # packageDefinitions of the package this was packaged with.
         # :help nixCats.flake.outputs.categoryDefinitions.scheme
-        themer = with pkgs.vimPlugins; (
-          builtins.getAttr (categories.colorscheme or "nightfox") {
-            # Theme switcher without creating a new category
-            "onedark" = onedark-nvim;
-            "catppuccin" = catppuccin-nvim;
-            "catppuccin-mocha" = catppuccin-nvim;
-            "tokyonight" = tokyonight-nvim;
-            "tokyonight-day" = tokyonight-nvim;
-            "kanagawa" = kanagawa-nvim;
+        themer = with pkgs.vimPlugins; {
+          # Theme switcher without creating a new category
+          "onedark" = onedark-nvim;
+          "catppuccin" = catppuccin-nvim;
+          "catppuccin-mocha" = catppuccin-nvim;
+          "tokyonight" = tokyonight-nvim;
+          "tokyonight-day" = tokyonight-nvim;
+          "kanagawa" = kanagawa-nvim;
 
-            "duskfox" = nightfox-nvim;
-            "nightfox" = nightfox-nvim;
-            "dawnfox" = nightfox-nvim;
-            "carbonfox" = nightfox-nvim;
-            "dayfox" = nightfox-nvim;
+          "duskfox" = nightfox-nvim;
+          "nightfox" = nightfox-nvim;
+          "dawnfox" = nightfox-nvim;
+          "carbonfox" = nightfox-nvim;
+          "dayfox" = nightfox-nvim;
 
-            "everforest" = everforest;
-            "arctic" = pkgs.callPackage ./pkgs/arctic {};
-            "dark" = pkgs.callPackage ./pkgs/dark {};
-          }
-        );
+          "everforest" = everforest;
+          "arctic" = pkgs.callPackage ./pkgs/arctic {};
+          "dark" = pkgs.callPackage ./pkgs/dark {};
+        };
         # This is obviously a fairly basic usecase for this, but still nice.
       };
 
@@ -444,7 +443,7 @@
           # If the dyanmic_theme category is disabled,
           # This config will use the dark theme
           theme_light = "dayfox";
-          theme_dark = "nightfox";
+          theme_dark = "dark";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
