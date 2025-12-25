@@ -198,17 +198,30 @@ require("lze").load({
 			on_attach = require("myLuaConf.LSPs.on_attach"), -- make sure this runs
 			settings = {
 				["rust-analyzer"] = {
-					-- Enable clippy on save for diagnostics
-					checkOnSave = {
-						command = "clippy",
-						allFeatures = true,
-					},
-					-- Enable other useful options
-					cargo = {
-						allFeatures = true,
-					},
+
 					procMacro = {
 						enable = true,
+					},
+					cargo = {
+						allFeatures = true,
+						loadOutDirsFromCheck = true,
+						runBuildScripts = true,
+					},
+					checkOnSave = true,
+					check = {
+						command = "clippy",
+						extraArgs = {
+							"--no-deps",
+							"--all-targets",
+							"--all-features",
+						},
+					},
+					diagnostics = {
+						enable = true,
+					},
+					inlayHints = {
+						closureReturnTypeHints = "always",
+						chainingHints = true,
 					},
 				},
 			},
