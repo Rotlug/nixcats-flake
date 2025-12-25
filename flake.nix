@@ -156,6 +156,7 @@
           rustfmt
           rust-analyzer
           clippy
+          taplo # Format toml files
         ];
 
         qml = with pkgs; [

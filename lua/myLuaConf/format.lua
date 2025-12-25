@@ -39,6 +39,7 @@ require("lze").load({
 					typescriptreact = { "prettierd" },
 					go = { "goimports-reviser", "gofmt", "golines" },
 					qml = { "qmlformat" },
+					toml = { "taplo" },
 				},
 			})
 
