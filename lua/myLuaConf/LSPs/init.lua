@@ -241,4 +241,11 @@ require("lze").load({
 			},
 		},
 	},
+	{
+		"cmake",
+		for_cat = "c",
+		lsp = {
+			filetypes = { "cmake" },
+		},
+	},
 })

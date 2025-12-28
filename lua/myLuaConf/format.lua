@@ -45,6 +45,8 @@ require("lze").load({
 					cpp = { "clang-format" },
 					objc = { "clang-format" },
 					objcpp = { "clang-format" },
+					--- End clang
+					cmake = { "cmake-format" },
 				},
 			})
 
