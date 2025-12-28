@@ -227,4 +227,18 @@ require("lze").load({
 			},
 		},
 	},
+	{
+		"clangd",
+		for_cat = "c",
+		lsp = {
+			filetypes = { "c", "cpp", "objc", "objcpp" },
+			cmd = {
+				"clangd",
+				"--clang-tidy",
+				"--completion-style=detailed",
+				"--header-insertion=iwyu",
+				"--background-index",
+			},
+		},
+	},
 })

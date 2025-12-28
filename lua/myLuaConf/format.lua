@@ -40,6 +40,11 @@ require("lze").load({
 					go = { "goimports-reviser", "gofmt", "golines" },
 					qml = { "qmlformat" },
 					toml = { "taplo" },
+					--- Clang
+					c = { "clang-format" },
+					cpp = { "clang-format" },
+					objc = { "clang-format" },
+					objcpp = { "clang-format" },
 				},
 			})
 

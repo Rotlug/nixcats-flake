@@ -159,6 +159,10 @@
           taplo # Format toml files
         ];
 
+        c = with pkgs; [
+          clang-tools
+        ];
+
         qml = with pkgs; [
           kdePackages.qtdeclarative # includes qmlls
         ];
@@ -428,6 +432,7 @@
           rust = true;
           qml = true;
           godot = true;
+          c = true;
 
           debug = true;
 
