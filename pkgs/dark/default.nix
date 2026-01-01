@@ -8,8 +8,4 @@ pkgs.vimUtils.buildVimPlugin rec {
     rev = version;
     sha256 = "sha256-t3jCNS50lNyJAwcORe3vO3vP5qDrfPCBXn62VGrzOos=";
   };
-
-  # propagatedBuildInputs = with pkgs; [
-  #   luajitPackages.lush-nvim
-  # ];
 }
