@@ -192,40 +192,15 @@ require("lze").load({
 		lsp = {},
 	},
 	{
-		"rust_analyzer",
-		for_cat = "rust",
-		lsp = {
-			on_attach = require("myLuaConf.LSPs.on_attach"), -- make sure this runs
-			settings = {
-				["rust-analyzer"] = {
-
-					procMacro = {
-						enable = true,
-					},
-					cargo = {
-						allFeatures = true,
-						loadOutDirsFromCheck = true,
-						runBuildScripts = true,
-					},
-					checkOnSave = true,
-					check = {
-						command = "clippy",
-						extraArgs = {
-							"--no-deps",
-							"--all-targets",
-							"--all-features",
-						},
-					},
-					diagnostics = {
-						enable = true,
-					},
-					inlayHints = {
-						closureReturnTypeHints = "always",
-						chainingHints = true,
-					},
+		"rustaceanvim",
+		version = "^6",
+		after = function(_)
+			vim.g.rustaceanvim = {
+				server = {
+					on_attach = require("myLuaConf.LSPs.on_attach"),
 				},
-			},
-		},
+			}
+		end,
 	},
 	{
 		"clangd",

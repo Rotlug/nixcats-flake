@@ -300,6 +300,9 @@
         webdev = with pkgs.vimPlugins; [
           nvim-ts-autotag
         ];
+        rust = with pkgs.vimPlugins; [
+          rustaceanvim
+        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH
@@ -446,7 +449,7 @@
           # If the dyanmic_theme category is disabled,
           # This config will use the dark theme
           theme_light = "dayfox";
-          theme_dark = "alabaster";
+          theme_dark = "dark";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
