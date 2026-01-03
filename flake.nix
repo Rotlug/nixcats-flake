@@ -218,7 +218,7 @@
 
           "everforest" = everforest;
           "arctic" = pkgs.callPackage ./pkgs/arctic {};
-          "dark" = pkgs.callPackage ./pkgs/dark {};
+          "jb" = pkgs.callPackage ./pkgs/jb {};
           "alabaster" = pkgs.callPackage ./pkgs/alabaster {};
         };
 
@@ -449,7 +449,7 @@
           # If the dyanmic_theme category is disabled,
           # This config will use the dark theme
           theme_light = "dayfox";
-          theme_dark = "dark";
+          theme_dark = "jb";
         };
         extra = {
           # to keep the categories table from being filled with non category things that you want to pass
