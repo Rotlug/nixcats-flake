@@ -35,7 +35,6 @@
       ...
     } @ packageDef: {
       lspsAndRuntimeDeps = {
-        # some categories of stuff.
         general = with pkgs; [
           universal-ctags
           ripgrep
@@ -94,7 +93,6 @@
         ];
       };
 
-      # This is for plugins that will load at startup without using packadd:
       startupPlugins = {
         general = with pkgs.vimPlugins; {
           always = [
@@ -113,11 +111,7 @@
           transparent-nvim
         ];
 
-        # You can retreive information from the
-        # packageDefinitions of the package this was packaged with.
-        # :help nixCats.flake.outputs.categoryDefinitions.scheme
         themer = with pkgs.vimPlugins; {
-          # Theme switcher without creating a new category
           "onedark" = onedark-nvim;
           "catppuccin" = catppuccin-nvim;
           "catppuccin-mocha" = catppuccin-nvim;
@@ -136,8 +130,6 @@
           "jb" = pkgs.callPackage ./pkgs/jb {};
           "alabaster" = pkgs.callPackage ./pkgs/alabaster {};
         };
-
-        # This is obviously a fairly basic usecase for this, but still nice.
       };
 
       optionalPlugins = {
@@ -199,85 +191,17 @@
           rustaceanvim
         ];
       };
-
-      # shared libraries to be added to LD_LIBRARY_PATH
-      # variable available to nvim runtime
-      sharedLibraries = {
-        general = with pkgs; [
-          # <- this would be included if any of the subcategories of general are
-          # libgit2
-        ];
-      };
-
-      # environmentVariables:
-      # this section is for environmentVariables that should be available
-      # at RUN TIME for plugins. Will be available to path within neovim terminal
-      environmentVariables = {
-        test = {
-          default = {
-            CATTESTVARDEFAULT = "It worked!";
-          };
-          subtest1 = {
-            CATTESTVAR = "It worked!";
-          };
-          subtest2 = {
-            CATTESTVAR3 = "It didn't work!";
-          };
-        };
-      };
-
-      # If you know what these are, you can provide custom ones by category here.
-      # If you dont, check this link out:
-      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
-      extraWrapperArgs = {
-        test = [
-          ''--set CATTESTVAR2 "It worked again!"''
-        ];
-      };
-
-      # lists of the functions you would have passed to
-      # python.withPackages or lua.withPackages
-      # do not forget to set `hosts.python3.enable` in package settings
-
-      # get the path to this python environment
-      # in your lua config via
-      # vim.g.python3_host_prog
-      # or run from nvim terminal via :!<packagename>-python3
-      python3.libraries = {
-        test = _: [];
-      };
-      # populates $LUA_PATH and $LUA_CPATH
-      extraLuaPackages = {
-        general = [(_: [])];
-      };
     };
 
-    # packageDefinitions:
-
-    # Now build a package with specific categories from above
-    # All categories you wish to include must be marked true,
-    # but false may be omitted.
-    # This entire set is also passed to nixCats for querying within the lua.
-    # It is directly translated to a Lua table, and a get function is defined.
-    # The get function is to prevent errors when querying subcategories.
-
-    # see :help nixCats.flake.outputs.packageDefinitions
     packageDefinitions = {
-      # the name here is the name of the package
-      # and also the default command name for it.
       nvim = {
         pkgs,
         name,
         ...
       } @ misc: {
-        # these also recieve our pkgs variable
-        # see :help nixCats.flake.outputs.packageDefinitions
         settings = {
           suffix-path = true;
           suffix-LD = true;
-          # The name of the package, and the default launch name,
-          # and the name of the .desktop file, is `nixCats`,
-          # or, whatever you named the package definition in the packageDefinitions set.
           # WARNING: MAKE SURE THESE DONT CONFLICT WITH OTHER INSTALLED PACKAGES ON YOUR PATH
           # That would result in a failed build, as nixos and home manager modules validate for collisions on your path
           aliases = ["vim" "vimcat"];
