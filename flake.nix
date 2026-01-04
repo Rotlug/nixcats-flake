@@ -141,9 +141,6 @@
       };
 
       optionalPlugins = {
-        lint = with pkgs.vimPlugins; [
-          nvim-lint
-        ];
         format = with pkgs.vimPlugins; [
           conform-nvim
         ];
@@ -297,7 +294,6 @@
         categories = {
           markdown = true;
           general = true;
-          lint = true;
           format = true;
 
           transparent = false;
