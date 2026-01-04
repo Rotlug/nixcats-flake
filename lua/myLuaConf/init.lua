@@ -17,11 +17,6 @@ require("myLuaConf.plugins")
 -- NOTE: obviously, more plugins, but more organized by what they do below
 require("myLuaConf.LSPs")
 
--- NOTE: we even ask nixCats if we included our debug stuff in this setup! (we didnt)
--- But we have a good base setup here as an example anyway!
-if nixCats("debug") then
-	require("myLuaConf.debug")
-end
 -- NOTE: we included these though! Or, at least, the category is enabled.
 -- these contain nvim-lint and conform setups.
 if nixCats("lint") then

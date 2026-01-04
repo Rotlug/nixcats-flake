@@ -1,7 +1,4 @@
 local catUtils = require("nixCatsUtils")
-if catUtils.isNixCats and nixCats("lspDebugMode") then
-	vim.lsp.set_log_level("debug")
-end
 
 -- NOTE: This file uses lzextras.lsp handler https://github.com/BirdeeHub/lzextras?tab=readme-ov-file#lsp-handler
 -- This is a slightly more performant fallback function
