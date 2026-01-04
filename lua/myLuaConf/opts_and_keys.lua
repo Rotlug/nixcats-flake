@@ -191,3 +191,9 @@ vim.keymap.set("x", "<M-f>", function()
 	-- Feed keys so command-line shows with cursor between the slashes
 	vim.api.nvim_feedkeys(final, "n", false)
 end, { noremap = true, desc = "Global substitute of selected text (Alt-f)" })
+
+-- Better window movement with Ctrl+Shift+Arrow
+vim.keymap.set("n", "<C-S-Left>", "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-S-Right>", "<C-w>l", { desc = "Go to right window" })
+vim.keymap.set("n", "<C-S-Up>", "<C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("n", "<C-S-Down>", "<C-w>j", { desc = "Go to lower window" })
