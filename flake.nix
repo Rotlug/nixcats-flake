@@ -126,9 +126,10 @@
           "dayfox" = nightfox-nvim;
 
           "everforest" = everforest;
-          "arctic" = pkgs.callPackage ./pkgs/arctic {};
-          "jb" = pkgs.callPackage ./pkgs/jb {};
-          "alabaster" = pkgs.callPackage ./pkgs/alabaster {};
+          "arctic" = pkgs.callPackage ./pkgs/themes/arctic {};
+          "jb" = pkgs.callPackage ./pkgs/themes/jb {};
+          "alabaster" = pkgs.callPackage ./pkgs/themes/alabaster {};
+          "vague" = pkgs.callPackage ./pkgs/themes/vague {};
         };
       };
 
@@ -239,7 +240,7 @@
           # If the dyanmic_theme category is disabled,
           # This config will use the dark theme
           theme_light = "dayfox";
-          theme_dark = "jb";
+          theme_dark = "vague";
         };
         extra = {
           nixdExtras = {
