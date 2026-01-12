@@ -386,6 +386,9 @@ require("lze").load({
 
 				dim = {
 					enabled = true,
+					scope = {
+						min_size = 2,
+					},
 					animate = {
 						enabled = false,
 					},
@@ -407,13 +410,13 @@ require("lze").load({
 			end, { desc = "Toggle File picker" })
 
 			-- Dim
-			vim.keymap.set("n", "<leader>d", function() -- Toggle dim
+			vim.keymap.set("n", "<leader>f", function() -- Toggle dim
 				if Snacks.dim.enabled then
 					Snacks.dim.disable()
 				else
 					Snacks.dim.enable()
 				end
-			end, { desc = "Dim unfocused scopes" })
+			end, { desc = "Focus on current scope" })
 		end,
 	},
 })

@@ -4,9 +4,7 @@ require("lze").load({
 		for_cat = "format",
 		cmd = { "ConformInfo" },
 		event = { "BufReadPre", "BufNewFile" },
-		keys = {
-			{ "<leader>FF", desc = "[F]ormat [F]ile" },
-		},
+		keys = {},
 		after = function(plugin)
 			local conform = require("conform")
 
