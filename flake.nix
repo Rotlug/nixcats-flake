@@ -103,7 +103,6 @@
             (nvim-notify.overrideAttrs {doCheck = false;}) # TODO: remove overrideAttrs after check is fixed
           ];
           extra = [
-            oil-nvim
             nvim-web-devicons
           ];
         };
@@ -152,11 +151,7 @@
             nvim-treesitter-textobjects
             nvim-treesitter.withAllGrammars
           ];
-          telescope = with pkgs.vimPlugins; [
-            telescope-fzf-native-nvim
-            telescope-ui-select-nvim
-            telescope-nvim
-          ];
+
           always = with pkgs.vimPlugins; [
             nvim-lspconfig
             lualine-nvim
@@ -170,19 +165,11 @@
           ];
           extra = with pkgs.vimPlugins; [
             fidget-nvim
-            # lualine-lsp-progress
             which-key-nvim
             comment-nvim
             undotree
             vim-startuptime
             todo-comments-nvim
-            # If it was included in your flake inputs as plugins-hlargs,
-            # this would be how to add that plugin in your config.
-            # pkgs.neovimPlugins.hlargs
-          ];
-          # IDE-Like plugins
-          ide = with pkgs.vimPlugins; [
-            nvim-tree-lua
           ];
         };
         webdev = with pkgs.vimPlugins; [
