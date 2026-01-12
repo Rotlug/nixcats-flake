@@ -379,6 +379,10 @@ require("lze").load({
 					replace_netrw = true,
 					trash = true,
 				},
+
+				notifier = {
+					enable = true,
+				},
 			})
 
 			--- Keymaps
