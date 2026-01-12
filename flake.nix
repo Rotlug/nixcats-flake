@@ -170,6 +170,7 @@
             undotree
             vim-startuptime
             todo-comments-nvim
+            snacks-nvim
           ];
         };
         webdev = with pkgs.vimPlugins; [

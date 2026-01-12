@@ -365,4 +365,35 @@ require("lze").load({
 			})
 		end,
 	},
+	{
+		"snacks.nvim",
+		for_cat = "general.extra",
+		after = function(plugin)
+			require("snacks").setup({
+				picker = {
+					enabled = true,
+				},
+
+				explorer = {
+					enabled = true,
+					replace_netrw = true,
+					trash = true,
+				},
+			})
+
+			--- Keymaps
+			-- File picker
+			vim.keymap.set("n", "<leader>-", function()
+				Snacks.picker.files()
+			end, { desc = "Find files (filename match)" })
+			vim.keymap.set("n", "<leader>/", function()
+				Snacks.picker.grep()
+			end, { desc = "Search contents" })
+
+			-- Explorer
+			vim.keymap.set("n", "<leader>e", function()
+				Snacks.explorer()
+			end, { desc = "Toggle File picker" })
+		end,
+	},
 })
