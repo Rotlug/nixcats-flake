@@ -383,6 +383,13 @@ require("lze").load({
 				notifier = {
 					enable = true,
 				},
+
+				dim = {
+					enabled = true,
+					animate = {
+						enabled = false,
+					},
+				},
 			})
 
 			--- Keymaps
@@ -398,6 +405,15 @@ require("lze").load({
 			vim.keymap.set("n", "<leader>e", function()
 				Snacks.explorer()
 			end, { desc = "Toggle File picker" })
+
+			-- Dim
+			vim.keymap.set("n", "<leader>d", function() -- Toggle dim
+				if Snacks.dim.enabled then
+					Snacks.dim.disable()
+				else
+					Snacks.dim.enable()
+				end
+			end, { desc = "Dim unfocused scopes" })
 		end,
 	},
 })
