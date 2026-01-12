@@ -135,9 +135,6 @@
         format = with pkgs.vimPlugins; [
           conform-nvim
         ];
-        markdown = with pkgs.vimPlugins; [
-          markdown-preview-nvim
-        ];
         general = {
           blink = with pkgs.vimPlugins; [
             luasnip
@@ -204,7 +201,6 @@
         };
         # enable the categories you want from categoryDefinitions
         categories = {
-          markdown = true;
           general = true;
           format = true;
 
