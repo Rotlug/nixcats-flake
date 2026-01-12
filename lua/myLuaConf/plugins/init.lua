@@ -360,6 +360,10 @@ require("lze").load({
 						enabled = false,
 					},
 				},
+
+				input = {
+					enabled = true,
+				},
 			})
 
 			--- Keymaps
