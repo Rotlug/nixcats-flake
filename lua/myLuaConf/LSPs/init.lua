@@ -181,7 +181,9 @@ require("lze").load({
 	{
 		"qmlls",
 		for_cat = "qml",
-		lsp = {},
+		lsp = {
+			cmd = { "qmlls", "-E" },
+		},
 	},
 	{
 		"gdscript",
