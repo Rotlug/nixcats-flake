@@ -197,6 +197,22 @@ require("lze").load({
 			vim.g.rustaceanvim = {
 				server = {
 					on_attach = require("myLuaConf.LSPs.on_attach"),
+
+					default_settings = {
+						-- rust-analyzer language server configuration
+						["rust-analyzer"] = {
+							checkOnSave = {
+								command = "clippy",
+								extraArgs = {
+									"--",
+									"-W",
+									"clippy::pedantic",
+									"-W",
+									"clippy::nursery",
+								},
+							},
+						},
+					},
 				},
 			}
 		end,
