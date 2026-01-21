@@ -199,9 +199,9 @@ require("lze").load({
 					on_attach = require("myLuaConf.LSPs.on_attach"),
 
 					default_settings = {
-						-- rust-analyzer language server configuration
 						["rust-analyzer"] = {
-							checkOnSave = {
+							-- Ensure check is enabled AND configured
+							check = {
 								command = "clippy",
 								extraArgs = {
 									"--",
@@ -211,6 +211,8 @@ require("lze").load({
 									"clippy::nursery",
 								},
 							},
+							-- This tells the server to actually use the check command defined above
+							checkOnSave = true,
 						},
 					},
 				},
