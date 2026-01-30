@@ -207,8 +207,6 @@ require("lze").load({
 									"--",
 									"-W",
 									"clippy::pedantic",
-									"-W",
-									"clippy::nursery",
 								},
 							},
 							-- This tells the server to actually use the check command defined above
